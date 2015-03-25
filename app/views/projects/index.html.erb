@@ -1,4 +1,5 @@
-<h1 class="hero"> Projectify! </h1>
+<% provide(:title, "Projects") %>
+<h1 class="hero"> Current Projectifications </h1>
 <p class="homebtn"><%= link_to 'New Project', new_project_path, class: 'btn btn-default btn-sm' %></p>
 
 <% @projects.each do |project| %>

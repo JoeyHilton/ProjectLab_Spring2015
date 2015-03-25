@@ -48,3 +48,27 @@ h1 {
   padding-right: 5px;
   float: left;
 }
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  // border-top: 2px solid #eaeaea;
+  // color: $gray-light;
+  a {
+    color: #555;
+    &:hover {
+      color: #222;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ProjectLabSpring2015</title>
+  <title><%= yield(:title) %> | Projectify!</title>
   <link href='http://fonts.googleapis.com/css?family=Mr+Dafoe' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -10,6 +10,6 @@
 <body class="container">
 <%= render 'layouts/navbar' %>
 <%= yield %>
-
+<%= render 'layouts/footer' %>
 </body>
 </html>
