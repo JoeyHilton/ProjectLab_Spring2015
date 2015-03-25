@@ -18,3 +18,29 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+body {
+  background: linear-gradient(#9B51E6, white); /* Standard syntax */
+  background-repeat: no-repeat;
+}
+
+.hero {
+  color: black;
+  font-family: 'Mr Dafoe', cursive;
+  font-size: 70px;
+  text-align: center;
+}
+
+.homebtn {
+  text-align: center;
+}
+.panel {
+  margin: 10px;
+  min-height: 250px;
+}
+
+.logo {
+  padding-top: 7px;
+  padding-right: 5px;
+  float: left;
+}
