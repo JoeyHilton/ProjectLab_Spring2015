@@ -23,7 +23,7 @@ class ProjectsControllerTest < ActionController::TestCase
 
   test "should create project" do
     assert_difference('Project.count', 1) do
-      post :create, project: { name: @project.name, description: @project.description, due_date: @project.due_date }
+      post :create, project: { name: @project.name, description: @project.description, :due_date => (Time.current + 1.minutes) }
     end
     assert_redirected_to projects_path
   end

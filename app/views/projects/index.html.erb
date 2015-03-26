@@ -10,7 +10,7 @@
     </div>
     <div class="panel-body">
         <h4><%= project.description %></h4>
-        <p><%= project.due_date %></p>
+        <p>Due in: <%= distance_of_time_in_words_to_now(project.due_date) %></p>
         <%= link_to 'Show', project_path(project), class: 'btn btn-default btn-sm' %>
         <%= link_to 'Edit', edit_project_path(project), class: 'btn btn-default btn-sm' %>
         <%= link_to 'Delete', project, method: :delete , class: 'btn btn-default btn-sm'%>
