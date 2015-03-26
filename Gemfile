@@ -7,6 +7,7 @@ gem 'rails', '4.2.0'
 gem 'pg'
 gem 'pry'
 # Use SCSS for stylesheets
+gem 'jquery-turbolinks'
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass'
 gem 'bootstrap_form'
