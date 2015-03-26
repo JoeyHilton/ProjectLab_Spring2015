@@ -17,7 +17,7 @@
             <!-- This area is the title for the dropdown on the right hand side -->
             <!-- I set it up so if a user is logged in, it displays their name. Otherwise it just says account -->
             <% if user_signed_in? %>
-              <%= current_user.name %>
+              <%= current_user.first_name %>
             <% else %>
               Account
             <% end %>
@@ -25,8 +25,8 @@
           <ul class="dropdown-menu" role="menu">
             <!-- We have an if/else block here to show different links depending on if a user is signed in or not -->
             <% if user_signed_in? %>
-             
-             
+              <li><%= link_to 'My Profile', users_profile_path %></li>
+              <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
               <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete%></li>
             <% else %>
               <li><%= link_to 'Sign Up', new_user_registration_path %></li>
