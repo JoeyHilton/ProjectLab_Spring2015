@@ -1,13 +1,18 @@
 require 'test_helper'
 
 class ProjectsControllerTest < ActionController::TestCase
+
+  def setup
+    @project = projects(:one)
+  end
+
   test "should get index" do
     get :index
     assert_response :success
   end
 
   test "should get show" do
-    get :show
+    get :show, id: @project.id
     assert_response :success
   end
 
@@ -16,24 +21,29 @@ class ProjectsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get create" do
-    get :create
-    assert_response :success
+  test "should create project" do
+    assert_difference('Project.count', 1) do
+      post :create, project: { name: @project.name, description: @project.description, due_date: @project.due_date }
+    end
+    assert_redirected_to projects_path
   end
 
   test "should get edit" do
-    get :edit
+    get :edit, id: @project.id
     assert_response :success
+    assert_template :edit
   end
 
-  test "should get update" do
-    get :update
-    assert_response :success
+  test "should destroy project" do
+    assert_difference('Project.count', -1) do
+      delete :destroy, id: @project
+    end
+
+    assert_redirected_to projects_path
   end
 
-  test "should get destroy" do
-    get :destroy
-    assert_response :success
-  end
-
+  # test "should get update" do
+  #   get :update
+  #   assert_response :success
+  # end
 end

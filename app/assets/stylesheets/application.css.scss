@@ -25,10 +25,22 @@ body {
 }
 
 .hero {
-  color: black;
+  // color: black;
   font-family: 'Mr Dafoe', cursive;
   font-size: 70px;
   text-align: center;
+}
+
+.jumbotron {
+  background-color: #101010;
+  h1 {
+    color: #fff
+  }
+}
+
+.h2home {
+  text-align: center;
+  color: #b2b2b2;
 }
 
 h1 {
