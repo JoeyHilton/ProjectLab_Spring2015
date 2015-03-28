@@ -10,7 +10,7 @@
 			<%= f.datetime_select :due_date, class: 'form-control'  %>
 
 		
-			<%= f.select(:priority, options_for_select([['Immediate', 1], ['High',2], ['Medium',3], ['Low',4], ['Whenever',5]])) %>
+			<%= f.select(:priority, options_for_select([['Immediate', 1], ['High',2], ['Medium',3], ['Low',4], ['Whenever',5]], 3)) %>
 
 		
   		<%= f.label :complete, class: "checkbox inline" do %>
