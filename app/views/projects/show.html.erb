@@ -25,7 +25,13 @@
             <td><%= task.name %></td>
             <td><%= task.description %></td>
             <td><%= task.due_date.strftime("%B %d, %Y") %></td>
-            <td><%= distance_of_time_in_words_to_now(task.due_date) %></td>
+            <td>
+              <% if task.due_date.present? && task.due_date < Time.now %>
+                <p class="due">PAST DUE!</p>
+              <% else %>
+                <p><%= distance_of_time_in_words_to_now(task.due_date) %></p>
+              <% end %>
+            </td>
             <td><% if task.priority == 1  %> 
                 Immediate
                 <% elsif task.priority ==2 %>
