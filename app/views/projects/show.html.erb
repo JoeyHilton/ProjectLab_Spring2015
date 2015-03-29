@@ -33,15 +33,15 @@
               <% end %>
             </td>
             <td><% if task.priority == 1  %> 
-                Immediate
+                  Immediate
                 <% elsif task.priority ==2 %>
-                High
+                  High
                 <% elsif task.priority ==3 %>
-                Medium
+                  Medium
                 <% elsif task.priority ==4 %>
-                Low
+                  Low
                 <% else %>
-                Whenever
+                  Whenever
                 <% end %>
             </td>
             <td><%= task.complete ? "Yes" : "Nope" %></td>
@@ -49,7 +49,7 @@
               <div class="btn-group btn-group-xs">
                 <%= link_to 'Edit', edit_project_task_path(@project, task), class: "btn" %>
                 <%= link_to 'Delete', project_task_path(@project, task), data: { confirm: "Are you sure?" }, 
-                                               method: :delete, class: "btn" %>
+                                                                         method: :delete, class: "btn" %>
               </div>
             </td>
           </tr>

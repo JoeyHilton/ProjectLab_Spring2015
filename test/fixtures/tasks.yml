@@ -4,10 +4,14 @@ one:
   name: MyString
   description: MyText
   due_date: 2015-03-26 20:34:34
+  priority: 3
+  complete: false
   project_id: 
 
 two:
   name: MyString
   description: MyText
   due_date: 2015-03-26 20:34:34
+  priority: 3
+  complete: false
   project_id: 
