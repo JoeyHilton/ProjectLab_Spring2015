@@ -16,7 +16,7 @@
 			  <tr>
 				  <td><%= project.name %></td>
 				  <td><%= project.description %></td>
-				  <td><%= project.due_date.strftime("%B %d, %Y") %></td>
+				  <td><%= project.due_date.strftime("%B %d, %Y, %I:%M %P") %></td>
 				  <td>
 			  		 <% if project.due_date.present? && project.due_date < Time.now %>
           			<p>PAST DUE!</p>
