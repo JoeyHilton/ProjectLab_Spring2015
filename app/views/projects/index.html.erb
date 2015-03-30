@@ -19,7 +19,7 @@
 				  <td><%= project.due_date.strftime("%B %d, %Y") %></td>
 				  <td>
 			  		 <% if project.due_date.present? && project.due_date < Time.now %>
-          			<p class="due">PAST DUE!</p>
+          			<p>PAST DUE!</p>
       			 <% else %>
           			<p><%= distance_of_time_in_words_to_now(project.due_date) %></p>
       			 <% end %>

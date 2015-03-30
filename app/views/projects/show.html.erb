@@ -27,18 +27,18 @@
             <td><%= task.due_date.strftime("%B %d, %Y") %></td>
             <td>
               <% if task.due_date.present? && task.due_date < Time.now %>
-                <p class="due">PAST DUE!</p>
+                <p>PAST DUE!</p>
               <% else %>
                 <p><%= distance_of_time_in_words_to_now(task.due_date) %></p>
               <% end %>
             </td>
             <td><% if task.priority == 1  %> 
                   Immediate
-                <% elsif task.priority ==2 %>
+                <% elsif task.priority == 2 %>
                   High
-                <% elsif task.priority ==3 %>
+                <% elsif task.priority == 3 %>
                   Medium
-                <% elsif task.priority ==4 %>
+                <% elsif task.priority == 4 %>
                   Low
                 <% else %>
                   Whenever
