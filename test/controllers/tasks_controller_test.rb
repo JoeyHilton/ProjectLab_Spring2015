@@ -27,7 +27,7 @@ def setup
   test "Default priority on a new task should be medium" do
     post :create, project_id: @project.id, task: { :name => 'Test', :description => 'Test description' , :due_date => (Time.current + 1.minutes) }
     task = assigns(:task)
-    assert_equal task.priority, 3
+    assert_equal "Medium", task.priority
   end
 
   test "Default complete on a new task should be false" do

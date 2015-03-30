@@ -1,6 +1,6 @@
 class AddDefaultValueToPriority < ActiveRecord::Migration
   def up
-  change_column :tasks, :priority, :integer, :default => 3
+  change_column :tasks, :priority, :integer, :default => 2
   end
 
   def down
