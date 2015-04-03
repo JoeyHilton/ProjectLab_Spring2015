@@ -17,4 +17,6 @@ class Task < ActiveRecord::Base
       errors.add(:due_date, "nothing in the past please")
     end
   end
+
+
 end

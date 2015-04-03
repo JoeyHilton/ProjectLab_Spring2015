@@ -1,3 +1,4 @@
-console.log( "You are using AJAX");
-$( '#voteBadge-<%= @link.id %>').html('<%= vote_badge(@link) %>');
+// alert( "You are using AJAX");
+$( '#complink-<%= @task.id %>').html('<%= complete_link(@task) %>');
+$('#timeLeft-<%= @task.id %>').html('<%= time_left(@task) %>');
 

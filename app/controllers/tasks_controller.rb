@@ -1,8 +1,8 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_project
+  before_action :set_project, except: :complete
   before_action :set_all_users, except: :destroy
-  before_action :set_task, only: [:edit, :update, :destroy]
+  before_action :set_task, only: [:edit, :update, :destroy, :complete]
 
   def new
     @task = @project.tasks.build
@@ -29,13 +29,19 @@ class TasksController < ApplicationController
   end
 
   def complete
+    @project = @task.project
     if @task.complete?
-      @task = false
+      @task.complete = false
     else
-      @task = true
+      @task.complete = true
     end  
     @task.save
-    redirect_to @project
+    # redirect_to @project
+
+    respond_to do |format|
+      format.html { redirect_to @project }
+      format.js 
+    end
   end
 
 
