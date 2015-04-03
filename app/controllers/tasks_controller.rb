@@ -28,6 +28,17 @@ class TasksController < ApplicationController
     end
   end
 
+  def complete
+    if @task.complete?
+      @task = false
+    else
+      @task = true
+    end  
+    @task.save
+    redirect_to @project
+  end
+
+
   def update
     if current_user.id == @task.assigned_user_id || 
        current_user.id == @task.user_id
