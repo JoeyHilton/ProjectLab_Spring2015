@@ -4,6 +4,7 @@ class ProjectsController < ApplicationController
 
   def show
     # @task = Task.new
+    @tasks = Task.order(:priority)
 
   end
 

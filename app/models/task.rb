@@ -5,6 +5,8 @@ class Task < ActiveRecord::Base
   belongs_to :assignee, class_name: "User", foreign_key: "assigned_user_id" 
 
   enum priority: ['whenever', 'low', 'medium', 'high', 'immediate']
+
+  self.default_scope {order ('tasks.priority DESC')}
   
   validates :name, presence: true
   validates :description, presence: true
