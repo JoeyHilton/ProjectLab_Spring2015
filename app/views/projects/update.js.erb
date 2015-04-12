@@ -1,0 +1,7 @@
+$('#projectModal').modal('hide');
+$('#projectList').prepend('<%= j render partial: "project_row", locals: { project: @project} %>');
+$('#ptitle').html('<%= j @project.name %>');
+$('#pdesc').html('<%= j @project.description %>');
+$('#pdate').html('<%= j @project.due_date.strftime %>');
+$('#username').html('<%= j @project.user.first_name %>');
+$('#ppriority').html('<%= j @project.priority.capitalize %>');

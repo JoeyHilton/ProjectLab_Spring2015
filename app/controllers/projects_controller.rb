@@ -19,7 +19,11 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     if @project.save
       flash[:success] = "Project Created"
-      redirect_to projects_path
+      respond_to do |format|
+        format.html { redirect_to @project }
+        format.js 
+      end
+      # redirect_to projects_path
     else
       flash[:danger] = "Please fill in every field and ensure the due date is in the future."
       render :new
@@ -42,7 +46,11 @@ class ProjectsController < ApplicationController
       @priority = Project.priorities
       if @project.update(project_params)
         flash[:success] = "Updated the project: '#{@project.name}'"
-        redirect_to projects_path
+        # redirect_to projects_path
+        respond_to do |format|
+        format.html { redirect_to @project }
+        format.js 
+      end
       else
         flash[:danger] = "Please fill in every field and ensure the due date is in the future."
         render :edit
